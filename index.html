@@ -39,6 +39,49 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<script>
+		document.addEventListener('contextmenu', function(e) {
+		  e.preventDefault();
+		});
+	  </script>
+	  <script>
+		document.addEventListener('keydown', function(e) {
+		  // Prevent View Source
+		  if ((e.ctrlKey && e.key === 'u') || (e.key === 'F12') || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+			e.preventDefault();
+		  }
+	  
+		  // Prevent Copy (Ctrl+C), Paste (Ctrl+V), Cut (Ctrl+X), Select All (Ctrl+A)
+		  if ((e.ctrlKey && ['c', 'v', 'x', 'a'].includes(e.key))) {
+			e.preventDefault();
+		  }
+		});
+	  </script>
+	  <script>
+		document.addEventListener('copy', function(e) {
+		  e.preventDefault();
+		});
+	  
+		document.addEventListener('paste', function(e) {
+		  e.preventDefault();
+		});
+	  </script>
+	  
+	  	  
+	  <script>
+		(function() {
+		  const element = new Image();
+		  Object.defineProperty(element, 'id', {
+			get: function() {
+			  alert('Developer Tools are open!');
+			  window.location.href = 'https://srojan.com.np'; // You can redirect or take action here
+			}
+		  });
+		  console.log(element);
+		})();
+	  </script>
+	  
+	  
 
 	</head>
 	<body>

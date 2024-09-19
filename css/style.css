@@ -19,6 +19,14 @@ body {
   background: #fff;
 }
 
+body {
+  -webkit-user-select: none;  /* Chrome, Safari */
+  -moz-user-select: none;     /* Firefox */
+  -ms-user-select: none;      /* IE/Edge */
+  user-select: none;          /* Standard syntax */
+}
+
+
 #page {
   position: relative;
   overflow-x: hidden;
